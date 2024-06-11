@@ -1,0 +1,44 @@
+#fake_math.py
+
+def divide(first, second):
+    if second > 0:
+        print(first / second)
+    elif second == 0:
+        print('Ошибка')
+
+#true_math.py
+
+from math import inf
+
+
+def divide(first, second):
+    if second > 0:
+        print(first / second)
+    elif second == 0:
+        print(inf)
+
+#main1.py
+
+from fake_math import divide as div_fm
+from true_math import divide as div_tm
+
+
+div_fm(69, 3)
+div_fm(3, 0)
+div_tm(49, 7)
+div_tm(15, 0)
+
+# Вывод
+#C:\Users\user\PycharmProjects\Homeworks\venv\Scripts\python.exe "C:\Users\user\PycharmProjects\Homeworks\Module 3 More about func\main1.py" 
+#23.0
+#Ошибка
+#7.0
+#inf
+
+#Process finished with exit code 0
+
+
+
+
+
+
