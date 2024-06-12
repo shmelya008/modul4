@@ -1,10 +1,12 @@
 #fake_math.py
 
 def divide(first, second):
+    global result
     if second > 0:
-        print(first / second)
+        result = first/second
     elif second == 0:
-        print('Ошибка')
+        result = 'Ошибка'
+    return result
 
 #true_math.py
 
@@ -12,10 +14,12 @@ from math import inf
 
 
 def divide(first, second):
+    global result
     if second > 0:
-        print(first / second)
+        result = first/second
     elif second == 0:
-        print(inf)
+        return inf
+    return result
 
 #main1.py
 
@@ -23,13 +27,18 @@ from fake_math import divide as div_fm
 from true_math import divide as div_tm
 
 
-div_fm(69, 3)
-div_fm(3, 0)
-div_tm(49, 7)
-div_tm(15, 0)
+Result1 = div_fm(69, 3)
+Result2 = div_fm(3, 0)
+Result3 = div_tm(49, 7)
+Result4 = div_tm(15, 0)
+
+print(Result1)
+print(Result2)
+print(Result3)
+print(Result4)
 
 # Вывод
-#C:\Users\user\PycharmProjects\Homeworks\venv\Scripts\python.exe "C:\Users\user\PycharmProjects\Homeworks\Module 3 More about func\main1.py" 
+#C:\Users\Sergey\PycharmProjects\pythonProject\.venv\Scripts\python.exe C:\Users\Sergey\PycharmProjects\pythonProject\Modul_4\Homework4.1\main1.py 
 #23.0
 #Ошибка
 #7.0
